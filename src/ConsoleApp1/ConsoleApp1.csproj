@@ -7,4 +7,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Effect.Actor\Effect.Actor.csproj" />
+  </ItemGroup>
+
 </Project>
