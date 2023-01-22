@@ -11,9 +11,7 @@ public readonly partial record struct HelloActor
         using var cts = CancellationTokenSource.CreateLinkedTokenSource(context.System.Shutdown);
 
         var ret = await ReceiveAff.Run(new(context, cts));
-
         Console.WriteLine(ret);
-        ret.ThrowIfFail();
     }
     public readonly record struct RT
     (

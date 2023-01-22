@@ -11,8 +11,9 @@ try
     var ret = await root.RequestAsync<string>(pid, "Hello", system.Shutdown);
     Console.WriteLine(ret);
 }
-catch(Exception ex)
+catch (Exception ex)
 {
+    Console.WriteLine(ex.ToString());
 }
 
 try
@@ -21,7 +22,7 @@ try
     var ret1 = await root.RequestAsync<string>(pid, "Hello1", system.Shutdown);
     Console.WriteLine(ret1);
 }
-catch (Exception ex)
+catch (Exception)
 {
 }
 

@@ -23,6 +23,6 @@ public interface IActor<RT> : IHas<RT, IContext> where RT : struct, IActor<RT>
         {
             T m => func(m),
             _ => unitAff
-        } | @catch(e => true, e => RespondEff(e).Bind(_ => FailAff<RT, Unit>(e)))
-        select unit;
+        } | @catch(e => RespondEff(e).Bind(_ => FailAff<RT, Unit>(e)))
+        select unit; Error
 }
