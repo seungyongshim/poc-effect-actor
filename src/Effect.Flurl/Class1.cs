@@ -12,11 +12,17 @@ public record FlurlError(int Code, dynamic FlurlResponse) : Expected(Code.ToStri
 
 public interface IFlurl<RT> : IHas<RT, FlurlClient> where RT : struct, IFlurl<RT>
 {
-    protected static Producer<RT, IFlurlResponse, Unit> Get(string parameter) =>
+    protected static Producer<RT, IFlurlResponse, Unit> GetProducer(string parameter) =>
         from http in Eff
-        from ret in Aff(() => http.AllowAnyHttpStatus().Request(parameter).GetAsync().ToValue())
-        from __1 in Producer.yield<RT, IFlurlResponse>(ret)
+        from ret in Producer.use<RT, IFlurlResponse, Unit>(Aff(() => http.AllowAnyHttpStatus().Request(parameter).GetAsync().ToValue()))
+        select ret;
+
+    public static Aff<RT, T> GetAff<T>(string parameter) =>
+        from http in Eff
+        from ret in GetProducer(parameter))
+        
         select unit;
+
 
     public static Aff<RT, T> GetAff<T>(string parameter) =>
         from http in Eff
