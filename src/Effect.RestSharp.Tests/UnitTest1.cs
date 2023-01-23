@@ -5,6 +5,7 @@ using static LanguageExt.Prelude;
 
 using static Effect.RestSharp.IRest<Effect.RestSharp.Tests.RT>;
 using RichardSzalay.MockHttp;
+using System.Net;
 
 namespace Effect.RestSharp.Tests;
 public record Response
@@ -21,6 +22,37 @@ public class RestSpec
 
         mockHttp.When("http://localhost/api/user/*")
                 .Respond("application/json", """
+                {
+                    "name" : "Test McGee"
+                }
+                """);
+
+        using var http = mockHttp.ToHttpClient();
+        using var rest = new RestClient(http, new RestClientOptions()
+        {
+            BaseUrl = new("http://localhost")
+        });
+
+        using var cts = new CancellationTokenSource();
+
+        var q = GetAff<Response>(new("api/user/1234"));
+
+        var ret = await q.Run(new(cts, rest));
+
+        Assert.Equal(ret.ThrowIfFail(), new()
+        {
+            Name = "Value",
+        });
+    }
+
+    [Fact]
+    public async Task Get400()
+    {
+        using var mockHttp = new MockHttpMessageHandler();
+
+        mockHttp.When("http://localhost/api/user/*")
+                
+                .Respond(HttpStatusCode.BadRequest,"application/json", """
                 {
                     "name" : "Test McGee"
                 }
