@@ -8,11 +8,11 @@ namespace ConsoleApp1.Actor;
 public readonly partial record struct HelloActor : IActor
 {
     public static Aff<RT, Unit> ReceiveAff =>
-        from _1 in ReceiveAff<Started>(_ => SetEff("Started"))
-        from _2 in ReceiveAff<string>(msg =>
-            from _1 in GetEff<string>()
-            from _2 in SetEff(msg)
-            from _3 in RespondEff(_1)
+        from __1 in ReceiveAff<Started>(static _ => SetEff("Started"))
+        from __2 in ReceiveAff<string>(static msg =>
+            from get in GetEff<string>()
+            from __1 in SetEff(msg)
+            from __2 in RespondEff(get)
             select unit)
         select unit;
 }

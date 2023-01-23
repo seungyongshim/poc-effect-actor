@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    
-    <PackageReference Include="Proto.Actor" Version="1.0.0" />
+    <PackageReference Include="LanguageExt.Core" Version="4.4.0" />
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Effect.Abstractions\Effect.Abstractions.csproj" />
-  </ItemGroup>
-
 </Project>

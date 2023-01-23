@@ -1,7 +1,7 @@
 using LanguageExt;
 using static LanguageExt.Prelude;
 
-namespace Effect.Actor;
+namespace Effect.Abstractions;
 
 public interface IHas<RT, T> : IHasCancel<RT> where RT : struct, IHas<RT, T>
 {

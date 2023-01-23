@@ -1,6 +1,6 @@
 using LanguageExt.Effects.Traits;
 
-namespace Effect.Actor;
+namespace Effect.Abstractions;
 
 public interface IHasCancel<RT> : HasCancel<RT> where RT : struct, IHasCancel<RT>
 {
