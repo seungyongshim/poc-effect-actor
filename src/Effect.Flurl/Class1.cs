@@ -1,10 +1,10 @@
 using Effect.Abstractions;
 using Flurl.Http;
-using static LanguageExt.Prelude;
 using LanguageExt;
 using LanguageExt.Common;
 using LanguageExt.Pipes;
 using static LanguageExt.Pipes.Pipe;
+using static LanguageExt.Prelude;
 
 namespace Effect.Flurl;
 
@@ -14,15 +14,9 @@ public interface IFlurl<RT> : IHas<RT, FlurlClient> where RT : struct, IFlurl<RT
 {
     protected static Producer<RT, IFlurlResponse, Unit> GetProducer(string parameter) =>
         from http in Eff
-        from ret in Producer.use<RT, IFlurlResponse, Unit>(Aff(() => http.AllowAnyHttpStatus().Request(parameter).GetAsync().ToValue()))
-        select ret;
-
-    public static Aff<RT, T> GetAff<T>(string parameter) =>
-        from http in Eff
-        from ret in GetProducer(parameter))
-        
+        from ret in Aff(() => http.AllowAnyHttpStatus().Request(parameter).GetAsync().ToValue())
+        from __1 in Producer.yield<RT, IFlurlResponse>(ret)
         select unit;
-
 
     public static Aff<RT, T> GetAff<T>(string parameter) =>
         from http in Eff
