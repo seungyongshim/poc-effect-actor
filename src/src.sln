@@ -14,15 +14,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Effect.Actor.Tests", "Effect.Actor.Tests\Effect.Actor.Tests.csproj", "{2272E678-8FFF-40A1-8893-766A14EDD686}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Effect.RestSharp", "Effect.RestSharp\Effect.RestSharp.csproj", "{8FB1FE6F-81BC-4F9A-8AA2-D5C15CBF5657}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Effect.RestSharp", "Effect.RestSharp\Effect.RestSharp.csproj", "{8FB1FE6F-81BC-4F9A-8AA2-D5C15CBF5657}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Effect.Abstractions", "Effect.Abstractions\Effect.Abstractions.csproj", "{57B29B17-0A1C-4D4E-831F-C24E07B9A53E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Effect.Abstractions", "Effect.Abstractions\Effect.Abstractions.csproj", "{57B29B17-0A1C-4D4E-831F-C24E07B9A53E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Effect.RestSharp.Tests", "Effect.RestSharp.Tests\Effect.RestSharp.Tests.csproj", "{21885D21-EE1A-443B-8C6F-3BB5B753867C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Effect.RestSharp.Tests", "Effect.RestSharp.Tests\Effect.RestSharp.Tests.csproj", "{21885D21-EE1A-443B-8C6F-3BB5B753867C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Effect.Flurl", "Effect.Flurl\Effect.Flurl.csproj", "{94CF295F-7520-481B-8345-7C6288E2E7EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Effect.Flurl", "Effect.Flurl\Effect.Flurl.csproj", "{94CF295F-7520-481B-8345-7C6288E2E7EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Effect.Flurl.Tests", "Effect.Flurl.Tests\Effect.Flurl.Tests.csproj", "{C56CB9F1-179E-4870-8666-292E2C723395}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Effect.Flurl.Tests", "Effect.Flurl.Tests\Effect.Flurl.Tests.csproj", "{C56CB9F1-179E-4870-8666-292E2C723395}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Effect.Tests1", "Effect.Tests\Effect.Tests1.csproj", "{F727C510-F79D-410A-8B2A-0C8CC5150C17}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -130,6 +132,18 @@ Global
 		{C56CB9F1-179E-4870-8666-292E2C723395}.Release|x64.Build.0 = Release|Any CPU
 		{C56CB9F1-179E-4870-8666-292E2C723395}.Release|x86.ActiveCfg = Release|Any CPU
 		{C56CB9F1-179E-4870-8666-292E2C723395}.Release|x86.Build.0 = Release|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Debug|x64.Build.0 = Debug|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Debug|x86.Build.0 = Debug|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Release|x64.ActiveCfg = Release|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Release|x64.Build.0 = Release|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Release|x86.ActiveCfg = Release|Any CPU
+		{F727C510-F79D-410A-8B2A-0C8CC5150C17}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

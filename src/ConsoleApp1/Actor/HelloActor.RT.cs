@@ -20,7 +20,9 @@ public readonly partial record struct HelloActor
         IStore<RT>
     {
         IContext IHas<RT, IContext>.It => Context;
+
         IContextStore IHas<RT, IContextStore>.It => Context;
+
         CancellationTokenSource HasCancel<RT>.CancellationTokenSource => CancellationTokenSource;
     }
 }
