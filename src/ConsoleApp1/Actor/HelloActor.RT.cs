@@ -5,12 +5,12 @@ using Proto;
 
 namespace ConsoleApp1.Actor;
 
-public readonly partial record struct HelloActor
+public readonly partial record struct HelloActor(Func<IContext, CancellationTokenSource, HelloActor.RT> FuncRT)
 {
     public async Task ReceiveAsync(IContext context)
     {
         using var cts = CancellationTokenSource.CreateLinkedTokenSource(context.System.Shutdown);
-        var ret = await ReceiveAff.Run(new(context, cts));
+        var ret = await ReceiveAff.Run(FuncRT(context, cts));
     }
     public readonly record struct RT
     (
